@@ -78,3 +78,5 @@ DerivedDataCache/*
 
 ImportedAssets/import_ma.png
 Source/Content/StarterContent/
+Source/Content/tank.uasset
+Source/Content/Levels/BattleGround.umap
