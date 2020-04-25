@@ -12,9 +12,10 @@
 UCLASS()
 class SOURCE_API ATankPlayerController : public APlayerController
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	ATank* GetControlledTank() const;
-	
+    ATank* GetControlledTank() const;
+
+    virtual void BeginPlay();
 };
