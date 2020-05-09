@@ -15,7 +15,20 @@ class SOURCE_API ATankPlayerController : public APlayerController
     GENERATED_BODY()
 
 public:
+    
+    virtual void BeginPlay(); 
+
+private:
+
+    virtual void Tick(float DeltaTime) override;
+
     ATank* GetControlledTank() const;
 
-    virtual void BeginPlay();
+    void AimTowardsCrosshair();
+
+    bool GetSightRayHitLocation(FVector& HitLocation) const;
+
+    UPROPERTY(EditAnywhere)
+    float CrosshairXLocation = 0.5f;
+    float CrosshairYLocation = 0.3333f;
 };

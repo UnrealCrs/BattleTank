@@ -14,7 +14,7 @@ void ATankAIController::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("AIController can't find player tank."))
 	}
 	else {
-		UE_LOG(LogTemp, Warning, TEXT("AIController ready."), *(ControlledTank->GetName()));
+		UE_LOG(LogTemp, Warning, TEXT("AIController found target: %s."), *(ControlledTank->GetName()));
 	}
 }
 
@@ -26,7 +26,7 @@ ATank* ATankAIController::GetControlledTank() const
 ATank* ATankAIController::GetPlayerTank() const
 {
 	auto PlayerPawn = Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
-	if (PlayerPawn) {
+	if (!PlayerPawn) {
 		return nullptr;
 	}
 	else {
